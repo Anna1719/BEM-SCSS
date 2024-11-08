@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  text-align: center;
+
+  &:not(:last-child) {
+    .card__image {
+      &:after {
+        content: "";
+        position: absolute;
+        width: calc(((var(--container-width) - var(--image-width) * 3) / 6 * 2 - 40px));
+        height: 1px;
+        top: 50%;
+        background: var(--gold-grey);
+        left: calc(100% + 20px);
+
+        @media (max-width: 500px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 10px;
+    border: 1px solid var(--gold-grey);
+    width: var(--image-width);
+    height: var(--image-width);
+  }
+
+  &__title {
+    letter-spacing: 0.3em;
+    font-weight: 200;
+  }
+
+  &__text{
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

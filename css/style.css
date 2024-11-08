@@ -1,0 +1,124 @@
+:root {
+  --gold-grey: #c7c4b6cc;
+  --brown-grey: #6e6c5e;
+  --white: #ffffff;
+  --black: #000000;
+  --neutral-grey: #585858;
+}
+
+.separator__header {
+  border-top: 2px solid var(--brown-grey);
+  width: 30px;
+}
+.separator__card {
+  display: none;
+  width: 100%;
+  height: 1px;
+  background: var(--gold-grey);
+}
+@media (max-width: 500px) {
+  .separator__card {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --container-width: 800px;
+  --image-width: 80px;
+}
+@media (max-width: 850px) {
+  body {
+    --container-width: 650px;
+  }
+}
+@media (max-width: 770px) {
+  body {
+    --container-width: 500px;
+  }
+}
+@media (max-width: 550px) {
+  body {
+    --container-width: 450px;
+  }
+}
+
+.about {
+  padding: 30px;
+}
+
+.header {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__title {
+  letter-spacing: 0.3em;
+}
+.header__text {
+  font-size: 16px;
+  color: var(--neutral-grey);
+  max-width: var(--container-width);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+}
+.card:not(:last-child) .card__image:after {
+  content: "";
+  position: absolute;
+  width: calc((var(--container-width) - var(--image-width) * 3) / 6 * 2 - 40px);
+  height: 1px;
+  top: 50%;
+  background: var(--gold-grey);
+  left: calc(100% + 20px);
+}
+@media (max-width: 500px) {
+  .card:not(:last-child) .card__image:after {
+    display: none;
+  }
+}
+.card__image {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 10px;
+  border: 1px solid var(--gold-grey);
+  width: var(--image-width);
+  height: var(--image-width);
+}
+.card__title {
+  letter-spacing: 0.3em;
+  font-weight: 200;
+}
+.card__text {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 0;
+  max-width: var(--container-width);
+  margin: auto;
+}
+@media (max-width: 500px) {
+  .list {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */
